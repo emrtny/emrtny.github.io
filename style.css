@@ -11,6 +11,7 @@
 body{
     margin: 0;
     background: linear-gradient(180deg, var(--one) 0%, rgba(0, 0, 0, 1) 100%);
+    font-display: swap;
     font-family: "Libre Caslon Display", serif;
     color: var(--text);
     overflow-x: hidden;
