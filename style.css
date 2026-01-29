@@ -13,6 +13,7 @@ body{
     background: linear-gradient(180deg, var(--one) 0%, rgba(0, 0, 0, 1) 100%);
     font-family: "Libre Caslon Display", serif;
     color: var(--text);
+    overflow-x: hidden;
 }
 
 p{
@@ -54,6 +55,7 @@ header{
 
 .hamburger-button{
     aspect-ratio: 1/1;
+    
 }
 
 button{
@@ -69,6 +71,9 @@ button:hover{
     box-shadow: inset 0 0 10px #ffffff49;
     cursor: pointer;
     background-color: rgba(59, 59, 59, 0.849);
+}
+button:focus{
+    outline: 1px solid white !important;
 }
 
 h1{
@@ -116,7 +121,7 @@ section{
 }
 
 .hero{
-    background: url(emrtny.png);
+    background: url(emrtny.webp);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -168,48 +173,92 @@ section{
     padding: 40px;
     padding-top: 10px;
     font-size: 1.4em;
+    text-align: justify;
 }
 
 .portfolio{
-    height: fit-content;
+    height: 830px;
     background: #000000;
     background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, #1d1d1d 2%, #161616 98%, rgba(0, 0, 0, 0) 100%);
+}
+
+.portfolio::after{
+    content: "";
+    background: linear-gradient(90deg,#1d1d1d 0%, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0) 95%, #1d1d1d 100%);
+    width: 100%;
+    height: 680px;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    pointer-events: none;
 }
 
 .portfolio h1{
     padding-top: 50px;
     font-size: 3em;
+    user-select: none;
 }
 
 .portfolio .card{
     background-color: var(--three);
-    margin: 10px;
-    flex-grow: 1;
     backdrop-filter: blur(10px);
     box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.171);
     outline: 1px solid rgb(37, 37, 37);
     border-radius: 30px;
     corner-shape: squircle;
-    align-self: stretch;
     transition: 0.2s;
     transform: scale(1);
+    width: 800px;
+    height: 600px;
+    user-select: none;
+    object-position: 100% center;
 }
 
 .portfolio .card:hover{
-    cursor: pointer;
     box-shadow: inset 0px 0px 30px rgba(122, 122, 122, 0.171);
-    transform: scale(1.05);
-    margin: 0 20px;
+    transform: scale(1.02);
+}
+
+.portfolio .card img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    corner-shape: squircle;
+}
+.portfolio .card h2{
+    padding: 30px;
+    margin: 0;
+    width: 40%;
+    display: inline-block;
+}
+.portfolio .card a{
+    padding: 30px;
+    margin: 0;
+    width: 40%;
+    float: right;
+    text-align: right;
+    display: inline-block;
 }
 
 #card-container{
     display: flex;
-    width: 100%;
     height: 700px;
-    justify-content: center;
-    align-items: stretch;
     padding: 50px;
     box-sizing: border-box;
+    position: absolute;
+    gap: 20px;
+    overflow: hidden;
+    user-select: none;
+    left: 25%;
+}
+
+
+
+#card-container:hover{
+    cursor: grab;
 }
 
 footer{
@@ -238,4 +287,33 @@ footer p{
 
 a{
     color: white;
+}
+
+::selection{
+    background: #ffffff83;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.90);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 3;
+  
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.menu.open {
+  transform: translateY(0);
+  pointer-events: auto;
 }

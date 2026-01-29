@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <script src="jquery-4.0.0.min.js"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>emrtny</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/82cd9593db.js" crossorigin="anonymous"></script>
@@ -11,20 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta name="description" content="Portfolio emrtny - projekty webowe, kreatywne realizacje i nowoczesny design. Sprawdź moje prace i umiejętności.">
 </head>
 <body>
     <header>
         <div class="header-left"><h1>epstein</h1></div>
-        <div class="header-right"><button class="hamburger-button"><i class="fa-solid fa-bars"></i></button></div>
+        <div class="header-right">
+            <button class="hamburger-button" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
     </header>
+    <nav class="menu" id="nav-menu" aria-hidden="true">
+        <a href="#about">O mnie</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
     <main>
         <section class="hero">
             <h1>epstein</h1>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="about-me-card">
                 <div class="row">
-                    <img src="emrtny2.png" alt="profile picture">
+                    <img src="emrtny2.webp" alt="profile picture">
                     <h1>o mnie</h1>
                 </div>
                 <div>
@@ -36,20 +46,47 @@
                 </div>
             </div>
         </section>
-        <section class="portfolio">
-            <h1>Moje projekty</h1>
-            <div id="card-container">
-                <div class="card fade-in-element"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+        <section class="portfolio" id="portfolio">
+            <h1>Moje projekty - musze to naprawic ok xd</h1>
+            <div draggable="false" id="card-container" data-mouse-down-at="0" data-prev-percentage="0">
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
+                <div class="card" draggable="false">
+                    <img src="emrtny2.webp" alt="Placeholder zrzutu ekranu" draggable="false">
+                    <h2>Projekt coś tam</h2>
+                    <a href="#blank" draggable="false">kliknij</a>
+                </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <h1>Kontakt</h1>
             <p>email: Jeffrey@Epstein.com</p>
             <p>nr telefonu: +48 676 676 676</p>
-            <a href="https://instagram.com">Instagram</a><br>
-            <a href="https://facebook.com">Facebook</a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram">&ThickSpace;</i>Instagram</a><br>
+            <a href="https://facebook.com"><i class="fa-brands fa-square-facebook"></i>&ThickSpace;Facebook</a>
         </section>
     </main>
     <footer>
